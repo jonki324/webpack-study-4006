@@ -124,6 +124,12 @@ movingButton.click(function () {
     'marginLeft': '20px'
   }, 1000);
 });
+var loadavg = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#loadavg');
+setInterval(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default.a.get('/server-status', {}, function (data) {
+    loadavg.text(data.loadavg.toString());
+  });
+}, 1000);
 
 /***/ }),
 /* 1 */
